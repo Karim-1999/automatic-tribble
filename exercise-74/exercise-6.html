@@ -1,0 +1,36 @@
+<html>
+  <body>
+    <div id="container">
+      <h2>Person's Form</h2>
+      <form id="person-form">
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
+
+<script>
+  // Code here
+  window.addEventListener('load', initForm=()=>{
+    const div = document.createElement('div')
+    const myForm = document.getElementById('person-form')
+    div.innerHTML=`<label>First Name</label>
+                      <input type="text" id="fn">
+                      <label>Last Name</label> 
+                      <input type="text" id="ln">
+                      <label>Age</label>
+                      <input type="text" id="age"> `
+    myForm.append(div)
+  })
+
+  const btn = document.querySelector('button')
+  btn.addEventListener('click', submitPersonForm=(event)=>{
+    event.preventDefault();
+    const person = {
+      name: document.getElementById('fn').value,
+      surName: document.getElementById('ln').value,
+      age: document.getElementById('age').value
+    }
+    console.log(person)
+  })
+</script>

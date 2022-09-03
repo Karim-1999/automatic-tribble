@@ -1,0 +1,35 @@
+<html>
+  <body>
+    <div id="container">
+      <form>
+        <div>
+          <label>First Name:</label>
+          <input type="text" class="form-input" id="firstName" value="Mario"/>
+        </div>
+        <div>
+          <label>Last Name:</label>
+          <input type="text" class="form-input" id="lastName" value="Rossi"/>
+        </div>
+        <div>
+          <label>Age:</label>
+          <input type="number" class="form-input" id="age" value="25"/>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
+
+<script>
+  // code here
+  const inputName = document.getElementById('firstName').value
+  const inputSurname = document.getElementById('lastName').value
+  const inputAge = document.getElementById('age').value
+  const person = {
+    name: inputName,
+    surname: inputSurname,
+    age: inputAge
+  }
+  const myForm = document.querySelector('form')
+  myForm.setAttribute('data-person', JSON.stringify(person))
+  console.log(myForm)
+</script>
